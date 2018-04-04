@@ -7,6 +7,10 @@
 header h3 {
   flex-grow: 1; }
 
+main .employee-info {
+  border: 1px solid #cacaca;
+  border-radius: 5px; }
+
 .container {
   display: block; }
 
@@ -18,6 +22,9 @@ header h3 {
 
 header {
   text-align: center; }
+
+main .employee-info img {
+  border-radius: 50%; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -414,7 +421,11 @@ template {
   box-sizing: border-box; }
 
 html {
+  height: 100%;
   background-image: url(../images/grey.png); }
+
+body {
+  height: 100%; }
 
 a {
   text-decoration: none; }
@@ -423,16 +434,23 @@ ul {
   list-style: none;
   padding: 0; }
 
+@media only screen and (min-width: 768px) {
+  main .employee {
+    padding-left: 15px;
+    padding-right: 15px; } }
+main .employee-info {
+  background-color: #fff; }
+
 .container {
   min-width: 320px;
   max-width: 1200px;
-  background-color: #fff;
+  background-color: rgba(102, 102, 102, 0.05);
   padding-left: 10px;
   padding-right: 10px; }
   @media only screen and (min-width: 540px) {
     .container {
-      padding-left: 40px;
-      padding-right: 40px; } }
+      padding-left: 20px;
+      padding-right: 20px; } }
 
 .grid__row {
   justify-content: space-between;

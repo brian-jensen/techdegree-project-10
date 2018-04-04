@@ -5,11 +5,11 @@
 .container {
   min-width: $container-min-width;
   max-width: $container-max-width;
-  background-color: $white;
+  background-color: rgba($dove-gray, .05);
   @include block-centered(block);
   @include column-spacing(null, null, 10px);
   @include mq(landscape) {
-    @include column-spacing(null, null, 40px);
+    @include column-spacing(null, null, 20px);
   }
 }
 

@@ -19,6 +19,11 @@
   width: 100%;
 }
 
+%primary-border {
+  border: $border--primary;
+  border-radius: $border--rounded-corners;
+}
+
 %no-line-height {
   line-height: 0;
 }

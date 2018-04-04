@@ -1,3 +1,14 @@
 main {
-  
+  .employee {
+    @include mq(tablet){
+      @include column-spacing(null,null,15px);
+    }
+    &-info {
+      background-color: $white;
+      @extend %primary-border;
+      img {
+        @extend %circle;
+      }
+    }
+  }
 }
