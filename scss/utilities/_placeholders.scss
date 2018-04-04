@@ -1,0 +1,72 @@
+//══════════════════════════════════════
+//    				 PLACEHOLDERS
+//══════════════════════════════════════
+%base-styles {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+}
+
+%relative {
+  position: relative;
+}
+
+%grow {
+  flex-grow: 1;
+}
+
+%full-width {
+  width: 100%;
+}
+
+%no-line-height {
+  line-height: 0;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%block-element {
+  display: block;
+}
+
+%flex-element {
+  display: flex;
+}
+
+%user-padding {
+  padding-left: 10px;
+}
+
+%inline-block-element {
+  display: inline-block;
+}
+
+%inline-flex-element {
+  display: inline-flex;
+}
+
+%center-element {
+  margin: 0 auto;
+}
+
+%center-text {
+  text-align: center;
+}
+
+%button-inset {
+  box-shadow: 0 0 3px 0 rgba($dove-gray, .8) inset;
+}
+
+%rounded-corners {
+  border-radius: $border--rounded-corners;
+}
+
+%circle {
+  border-radius: $border--circle;
+}
+
+%button-hover {
+  box-shadow: inset 3px 2px 3px darken($color-primary, 20%);
+}

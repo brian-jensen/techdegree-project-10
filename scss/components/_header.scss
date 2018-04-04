@@ -1,0 +1,25 @@
+//══════════════════════════════════════
+//              HEADER STYLES
+//══════════════════════════════════════
+
+header {
+  @include row-spacing(null,null,20px);
+  @extend %center-text;
+  h3 {
+    text-transform: uppercase;
+    font-weight: $font-weight--medium;
+    color: $tundora;
+    letter-spacing: 1px;
+    font-size: $base__font-size - 2;
+    @extend %grow;
+    @include mq(landscape) {
+      font-size: $base__font-size + 2;
+    }
+    @include mq(tablet) {
+      font-size: $base__font-size + 4;
+    }
+    @include mq(desktop) {
+      font-size: $base__font-size + 6;
+    }
+  }
+}
