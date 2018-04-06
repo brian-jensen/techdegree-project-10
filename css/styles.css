@@ -4,17 +4,20 @@
   font-family: "Martel Sans", "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 200; }
 
-header h3 {
+main .employee, main .employee-info, main .employee-info li p, header h3 {
   flex-grow: 1; }
 
+main .employee, main .employee-info, main .employee-info li {
+  width: 100%; }
+
 main .employee-info {
-  border: 1px solid #cacaca;
-  border-radius: 5px; }
+  border: 2px solid #cacaca;
+  border-radius: 10px; }
 
 .container {
   display: block; }
 
-.grid__row {
+main .employee, main .employee-info, .grid__row {
   display: flex; }
 
 .container {
@@ -421,30 +424,87 @@ template {
   box-sizing: border-box; }
 
 html {
-  height: 100%;
   background-image: url(../images/grey.png); }
-
-body {
-  height: 100%; }
 
 a {
   text-decoration: none; }
 
 ul {
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
-@media only screen and (min-width: 768px) {
-  main .employee {
-    padding-left: 15px;
-    padding-right: 15px; } }
-main .employee-info {
-  background-color: #fff; }
+main .employee {
+  min-width: 300px;
+  height: 125px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start; }
+  @media only screen and (min-width: 540px) {
+    main .employee {
+      padding-left: 15px;
+      padding-right: 15px;
+      min-width: 360px; } }
+  @media only screen and (min-width: 540px) {
+    main .employee {
+      height: 175px; } }
+  main .employee-info {
+    background-color: #fff;
+    min-width: 300px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+    @media only screen and (min-width: 540px) {
+      main .employee-info {
+        margin-top: 15px;
+        margin-bottom: 15px; } }
+    main .employee-info img {
+      vertical-align: middle;
+      max-width: 75px;
+      border: 2px solid #cacaca; }
+      @media only screen and (min-width: 540px) {
+        main .employee-info img {
+          max-width: 110px;
+          margin-left: 10px;
+          margin-right: 10px; } }
+    main .employee-info li {
+      display: block;
+      margin: auto; }
+      main .employee-info li.employee-image {
+        flex: 1;
+        margin-right: 10px; }
+      main .employee-info li p {
+        color: #666;
+        line-height: 0.5; }
+        main .employee-info li p.employee-name {
+          color: #383838;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 1; }
+        main .employee-info li p.employee-email {
+          font-size: 12px;
+          word-break: break-all;
+          line-height: 1.15; }
+          @media only screen and (min-width: 768px) {
+            main .employee-info li p.employee-email {
+              font-size: 11px; } }
+        main .employee-info li p.employee-city {
+          text-transform: capitalize;
+          color: #4d4d4d;
+          font-weight: 400; }
 
 .container {
   min-width: 320px;
   max-width: 1200px;
   background-color: rgba(102, 102, 102, 0.05);
+  min-height: 100vh;
+  box-shadow: 0px 0px 10px 4px rgba(102, 102, 102, 0.23);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px; }
   @media only screen and (min-width: 540px) {

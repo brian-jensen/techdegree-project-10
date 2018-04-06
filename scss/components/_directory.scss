@@ -1,13 +1,71 @@
 main {
   .employee {
-    @include mq(tablet){
+    min-width: 300px;
+    height: 125px;
+    @include flex-container(flex, flex-start, wrap, column, flex-start);
+    @extend %full-width;
+    @extend %grow;
+    @include mq(landscape) {
       @include column-spacing(null,null,15px);
+      min-width: 360px;
+    }
+    @include mq(landscape) {
+      height: 175px;
     }
     &-info {
       background-color: $white;
+      min-width: 300px;
+      @extend %full-width;
+      @extend %grow;
       @extend %primary-border;
+      @include flex-container(flex, flex-start);
+      @include column-spacing(null,null,10px);
+      @include row-spacing(5px);
+      @include mq(landscape) {
+        @include row-spacing(15px);
+      }
       img {
+        vertical-align: middle;
         @extend %circle;
+        max-width: 75px;
+        border: $border--primary;
+        @include mq(landscape){
+          max-width: 110px;
+          @include column-spacing(10px);
+        }
+      }
+      li {
+        @extend %full-width;
+        display: block;
+        margin: auto;
+        &.employee-image {
+          flex: 1;
+          margin-right: 10px;
+        }
+        p {
+          color: $dove-gray;
+          @extend %grow;
+          line-height: 0.5;
+          &.employee-name {
+            color: darken($dove-gray, 18%);
+            font-weight: $font-weight--bold;
+            font-size: $base__font-size + 4;
+            line-height: 1;
+          }
+          &.employee-email {
+            font-size: $base__font-size - 2;
+            word-break: break-all;
+            line-height: 1.15;
+            @include mq(tablet) {
+              font-size: $base__font-size - 3;
+            }
+          }
+          &.employee-city {
+            text-transform: capitalize;
+            color: darken($dove-gray, 10%);
+            font-weight: $font-weight--medium;
+          }
+        }
       }
     }
   }

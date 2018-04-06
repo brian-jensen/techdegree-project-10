@@ -6,7 +6,11 @@
   min-width: $container-min-width;
   max-width: $container-max-width;
   background-color: rgba($dove-gray, .05);
+  min-height: 100vh;
+  box-shadow: 0px 0px 10px 4px rgba($dove-gray,0.23);
   @include block-centered(block);
+  @include column-spacing(null, null, 0);
+  @include row-spacing(null,null,null,50px);
   @include column-spacing(null, null, 10px);
   @include mq(landscape) {
     @include column-spacing(null, null, 20px);
