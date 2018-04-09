@@ -1,6 +1,7 @@
 /* jshint esversion: 6 */
 
 const directoryContainer = document.querySelector('main');
+const input = document.querySelector('input');
 let employees = [];
 
 $.ajax({
@@ -8,7 +9,7 @@ $.ajax({
   dataType: 'json',
   success: function(data) {
     employees = data.results;
-    buildDirectory(data);
+    buildDirectory(employees);
   }
 });
 
@@ -34,11 +35,31 @@ function buildDirectory(data) {
             <p class="employee-name">${fullName}</p>
             <p class="employee-email">${email}</p>
             <p class="employee-city">${city}</p>
-          </li>
+           </li>
         </ul>
       </div>
     `;
+    
+    if (employees[key].gender === 'female') {
+      let images = document.querySelectorAll('img');
+      images[key].style.borderColor = "#ffb6c1";
+    }
   }
+
+  input.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    let search = e.target.value.toLowerCase();
+    let employeeContainer = document.querySelectorAll('div.employee');
+    let employeeName = document.querySelectorAll('.employee-name');
+    for (let i = 0; i < employeeName.length; i++) {
+      let filteredName = employeeName[i];
+      if (filteredName.innerHTML.toLowerCase().indexOf(search) > -1) {
+        employeeContainer[i].style.display = '';
+      } else {
+        employeeContainer[i].style.display = 'none';
+      }
+    }
+  });
 }
 
 function capitalize(name) {
@@ -47,3 +68,6 @@ function capitalize(name) {
   });
 }
 
+window.onload = function () {
+  input.value = '';
+};

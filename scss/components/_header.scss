@@ -11,6 +11,7 @@ header {
     color: $tundora;
     letter-spacing: 1px;
     font-size: $base__font-size - 2;
+    width: 100%;
     @extend %grow;
     @include mq(landscape) {
       font-size: $base__font-size + 2;
@@ -20,6 +21,32 @@ header {
     }
     @include mq(desktop) {
       font-size: $base__font-size + 6;
+    }
+  }
+  input {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 30px;
+    color: darken($dove-gray, 18%);
+    font-weight: $font-weight--thin;
+    font-size: $base__font-size - 2;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid lighten($silver, 5%);
+    background-image: url('../images/search-indicator-magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 98% 50%;
+    &::placeholder {
+      font-size: $base__font-size - 2;
+      color: #778899;
+      font-weight: $font-weight--thin;
+      font-style: italic;
+    }
+    @include mq(landscape) {
+      border-radius: 10px;
+      height: 40px;
     }
   }
 }

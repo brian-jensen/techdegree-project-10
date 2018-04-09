@@ -28,7 +28,7 @@ main {
         vertical-align: middle;
         @extend %circle;
         max-width: 75px;
-        border: $border--primary;
+        border: 2px solid #add8e6;
         @include mq(landscape){
           max-width: 110px;
           @include column-spacing(10px);
