@@ -15,6 +15,7 @@ main {
     &-info {
       background-color: $white;
       min-width: 300px;
+      @extend %pointer;
       @extend %full-width;
       @extend %grow;
       @extend %primary-border;
@@ -47,18 +48,12 @@ main {
           @extend %grow;
           line-height: 0.5;
           &.employee-name {
-            color: darken($dove-gray, 18%);
-            font-weight: $font-weight--bold;
-            font-size: $base__font-size + 4;
             line-height: 1;
+            @extend %employee-name;
           }
           &.employee-email {
             font-size: $base__font-size - 2;
-            word-break: break-all;
             line-height: 1.15;
-            @include mq(tablet) {
-              font-size: $base__font-size - 3;
-            }
           }
           &.employee-city {
             text-transform: capitalize;

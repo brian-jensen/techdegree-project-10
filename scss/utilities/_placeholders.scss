@@ -75,3 +75,9 @@
 %button-hover {
   box-shadow: inset 3px 2px 3px darken($color-primary, 20%);
 }
+
+%employee-name {
+  color: darken($dove-gray, 18%);
+  font-weight: $font-weight--bold;
+  font-size: $base__font-size + 4;
+}
