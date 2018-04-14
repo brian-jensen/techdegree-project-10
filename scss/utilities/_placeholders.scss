@@ -36,6 +36,14 @@
   display: block;
 }
 
+%full-auto {
+  margin: auto;
+}
+
+%capitalize {
+  text-transform: capitalize;
+}
+
 %flex-element {
   display: flex;
 }
@@ -80,4 +88,45 @@
   color: darken($dove-gray, 18%);
   font-weight: $font-weight--bold;
   font-size: $base__font-size + 4;
+}
+
+%arrow-defaults {
+  width: 35px;
+  height: 35px;
+  path {
+    fill: #778899;
+    &.inner-arrow {
+      fill: $white;
+    }
+  }
+  &:hover {
+    path {
+      fill: $pastel-green;
+      &.inner-arrow {
+        fill: $white;
+      }
+    }
+  }
+}
+
+%svg-arrow-defaults {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  opacity: 1;
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.25;
+    .left-arrow,
+    .right-arrow {
+      &:hover {
+        path {
+          fill: #778899;
+          &.inner-arrow {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
 }

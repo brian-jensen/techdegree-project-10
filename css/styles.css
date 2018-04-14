@@ -14,16 +14,23 @@ main .employee, main .employee-info, main .employee-info li {
   border: 2px solid #cacaca;
   border-radius: 10px; }
 
-main .employee-info {
+.svg-close-icon, .svg-left-arrow,
+.svg-right-arrow, main .employee-info {
   cursor: pointer; }
 
-.container {
+.svg-close-icon, main .employee-info li, .container, header input {
   display: block; }
+
+.modal-container .employee-modal, main .employee-info li {
+  margin: auto; }
+
+.modal-container .employee-modal-street, .modal-container .employee-modal-address, main .employee-info li p.employee-city {
+  text-transform: capitalize; }
 
 main .employee, main .employee-info, .grid__row {
   display: flex; }
 
-.container {
+.container, header input {
   margin: 0 auto; }
 
 header {
@@ -36,6 +43,44 @@ header {
   color: #383838;
   font-weight: 600;
   font-size: 18px; }
+
+.left-arrow,
+.right-arrow {
+  width: 35px;
+  height: 35px; }
+  .left-arrow path,
+  .right-arrow path {
+    fill: #778899; }
+    .left-arrow path.inner-arrow,
+    .right-arrow path.inner-arrow {
+      fill: #fff; }
+  .left-arrow:hover path,
+  .right-arrow:hover path {
+    fill: #85db81; }
+    .left-arrow:hover path.inner-arrow,
+    .right-arrow:hover path.inner-arrow {
+      fill: #fff; }
+
+.svg-left-arrow,
+.svg-right-arrow {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  opacity: 1; }
+  .disabled.svg-left-arrow,
+  .disabled.svg-right-arrow {
+    cursor: not-allowed;
+    opacity: 0.25; }
+    .disabled.svg-left-arrow .left-arrow:hover path,
+    .disabled.svg-right-arrow .left-arrow:hover path,
+    .disabled.svg-left-arrow .right-arrow:hover path,
+    .disabled.svg-right-arrow .right-arrow:hover path {
+      fill: #778899; }
+      .disabled.svg-left-arrow .left-arrow:hover path.inner-arrow,
+      .disabled.svg-right-arrow .left-arrow:hover path.inner-arrow,
+      .disabled.svg-left-arrow .right-arrow:hover path.inner-arrow,
+      .disabled.svg-right-arrow .right-arrow:hover path.inner-arrow {
+        fill: #fff; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -458,13 +503,13 @@ ul {
     right: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
     max-width: 320px;
     height: 400px;
     background-color: white;
     z-index: 200;
     text-align: center;
-    padding-top: 25px; }
+    padding-top: 25px;
+    box-shadow: 0px 0px 10px 10px rgba(102, 102, 102, 0.5); }
     .modal-container .employee-modal ul {
       line-height: 0.7rem;
       color: #666; }
@@ -480,7 +525,6 @@ ul {
     .modal-container .employee-modal-cell {
       font-size: 13px; }
     .modal-container .employee-modal-street, .modal-container .employee-modal-address {
-      text-transform: capitalize;
       line-height: 0.25; }
     .modal-container .employee-modal-street {
       margin-top: 25px; }
@@ -494,6 +538,32 @@ ul {
       border: 0;
       border-top: 1px solid #cacaca; }
 
+.svg-close-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px; }
+  .svg-close-icon .close-icon {
+    width: 25px;
+    height: 27px; }
+    .svg-close-icon .close-icon circle {
+      fill: #778899; }
+    .svg-close-icon .close-icon polyline {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-miterlimit: 10; }
+  .svg-close-icon:hover circle {
+    fill: #85db81; }
+  .svg-close-icon:hover polyline {
+    fill: #fff; }
+
+.svg-left-arrow {
+  left: 18px; }
+
+.svg-right-arrow {
+  right: 18px; }
+
 main .employee {
   min-width: 300px;
   height: 125px;
@@ -503,9 +573,9 @@ main .employee {
   align-items: flex-start; }
   @media only screen and (min-width: 540px) {
     main .employee {
+      min-width: 360px;
       padding-left: 15px;
-      padding-right: 15px;
-      min-width: 360px; } }
+      padding-right: 15px; } }
   @media only screen and (min-width: 540px) {
     main .employee {
       height: 175px; } }
@@ -521,6 +591,8 @@ main .employee {
       main .employee-info {
         margin-top: 15px;
         margin-bottom: 15px; } }
+    main .employee-info:hover {
+      box-shadow: 0px 0px 10px 0px rgba(102, 102, 102, 0.5); }
     main .employee-info img {
       vertical-align: middle;
       max-width: 75px;
@@ -531,8 +603,7 @@ main .employee {
           margin-left: 10px;
           margin-right: 10px; } }
     main .employee-info li {
-      display: block;
-      margin: auto; }
+      word-break: break-all; }
       main .employee-info li.employee-image {
         flex: 1;
         margin-right: 10px; }
@@ -545,7 +616,6 @@ main .employee {
           font-size: 12px;
           line-height: 1.15; }
         main .employee-info li p.employee-city {
-          text-transform: capitalize;
           color: #4d4d4d;
           font-weight: 400; }
 
@@ -615,8 +685,6 @@ header {
       header h3 {
         font-size: 20px; } }
   header input {
-    display: block;
-    margin: 0 auto;
     width: 300px;
     height: 30px;
     color: #383838;

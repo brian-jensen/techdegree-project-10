@@ -1,3 +1,7 @@
+//══════════════════════════════════════
+//            DIRECTORY STYLES
+//══════════════════════════════════════
+
 main {
   .employee {
     min-width: 300px;
@@ -6,8 +10,8 @@ main {
     @extend %full-width;
     @extend %grow;
     @include mq(landscape) {
-      @include column-spacing(null,null,15px);
       min-width: 360px;
+      @include column-spacing(null,null,15px);
     }
     @include mq(landscape) {
       height: 175px;
@@ -25,28 +29,32 @@ main {
       @include mq(landscape) {
         @include row-spacing(15px);
       }
+      &:hover {
+        box-shadow: 0px 0px 10px 0px rgba($dove-gray, .5);
+      }
       img {
         vertical-align: middle;
-        @extend %circle;
         max-width: 75px;
-        border: 2px solid #add8e6;
+        border: 2px solid $regent-st-blue;
+        @extend %circle;
         @include mq(landscape){
           max-width: 110px;
           @include column-spacing(10px);
         }
       }
       li {
+        word-break: break-all;
         @extend %full-width;
-        display: block;
-        margin: auto;
+        @extend %block-element;
+        @extend %full-auto;
         &.employee-image {
           flex: 1;
           margin-right: 10px;
         }
         p {
           color: $dove-gray;
-          @extend %grow;
           line-height: 0.5;
+          @extend %grow;
           &.employee-name {
             line-height: 1;
             @extend %employee-name;
@@ -56,9 +64,9 @@ main {
             line-height: 1.15;
           }
           &.employee-city {
-            text-transform: capitalize;
             color: darken($dove-gray, 10%);
             font-weight: $font-weight--medium;
+            @extend %capitalize;
           }
         }
       }

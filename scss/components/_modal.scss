@@ -1,3 +1,6 @@
+//══════════════════════════════════════
+//              MODAL STYLES
+//══════════════════════════════════════
 
 .modal-container {
   display: none;
@@ -15,13 +18,14 @@
     right: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
     max-width: 320px;
     height: 400px;
     background-color: rgba($white, 1.0);
     z-index: 200;
     text-align: center;
     padding-top: 25px;
+    box-shadow: 0px 0px 10px 10px rgba($dove-gray, .5);
+    @extend %full-auto;
     @extend %primary-border;
     ul {
       line-height: 0.7rem;
@@ -41,14 +45,14 @@
     }
     &-cell,
     &-dob {
-       letter-spacing: 1px;
+      letter-spacing: 1px;
     }
     &-cell {
       font-size: $base__font-size - 1;
     }
     &-street,
     &-address {
-      text-transform: capitalize;
+      @extend %capitalize;
       line-height: 0.25;
     }
     &-street {
@@ -66,5 +70,51 @@
   }
 }
 
+.svg-close-icon {
+  position: absolute;
+  @extend %block-element;
+  top: 5px;
+  right: 5px;
+  @extend %pointer;
+  .close-icon {
+    width: 25px;
+    height: 27px;
+    circle {
+      fill: #778899;
+    }
+    polyline {
+      fill: none;
+      stroke: $white;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
+  }
+  &:hover {
+    circle {
+      fill: $pastel-green;
+    }
+    polyline {
+      fill: $white;
+    }
+  }
+}
 
- 
+.left-arrow,
+.right-arrow {
+  @extend %arrow-defaults;
+}
+
+.svg-left-arrow,
+.svg-right-arrow {
+  @extend %svg-arrow-defaults;
+  @extend %pointer;
+}
+
+.svg-left-arrow {
+  left: 18px;
+}
+
+.svg-right-arrow {
+  right: 18px;
+}

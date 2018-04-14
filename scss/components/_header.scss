@@ -24,8 +24,6 @@ header {
     }
   }
   input {
-    display: block;
-    margin: 0 auto;
     width: 300px;
     height: 30px;
     color: darken($dove-gray, 18%);
@@ -38,6 +36,8 @@ header {
     background-repeat: no-repeat;
     background-size: 16px 16px;
     background-position: 98% 50%;
+    @extend %block-element;
+    @extend %center-element;
     &::placeholder {
       font-size: $base__font-size - 2;
       color: #778899;
