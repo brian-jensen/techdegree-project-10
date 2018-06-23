@@ -74,7 +74,7 @@ function buildDirectory(data) {
     let city = target.location.city;
     let state = abbrState(target.location.state, 'abbr');
     let zipcode = target.location.postcode;
-    let dob = new Date(Date.parse(target.dob.replace(/-/g, "/"))).toLocaleDateString(navigator.language);
+    let dob = new Date(Date.parse(target.dob.date)).toLocaleDateString(navigator.location);
     modalContainer.innerHTML = `
         <div class="employee-modal">
           <ul>
